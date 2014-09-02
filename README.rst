@@ -1,5 +1,14 @@
 helga-cowsay
 ============
+ ____________
+< I Love nix >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
 Inspired by:
 http://en.wikipedia.org/wiki/Cowsay
 
