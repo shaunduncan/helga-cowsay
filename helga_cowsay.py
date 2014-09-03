@@ -1,5 +1,10 @@
 from helga.plugins import command
 import textwrap
+import time
+
+FLOOD_RATE = 30
+
+LAST_USED = {}
 
 
 @command('cowsay', aliases=['cow'])
@@ -15,6 +20,12 @@ def cowsay(client, channel, nick, message, cmd, args):
                     ||----w |
                     ||     ||
     """
+    global FLOOD_RATE, LAST_USED
+    now = time.time()
+
+    if channel in LAST_USED and (now - LAST_USED[channel]) < FLOOD_RATE:
+        return
+    LAST_USED[channel] = now
 
     text = ' '.join(args)
     return build_bubble(text) + build_cow()
