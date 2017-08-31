@@ -28,17 +28,19 @@ def cowsay(client, channel, nick, message, cmd, args):
     LAST_USED[channel] = now
 
     text = ' '.join(args)
-    return build_bubble(text) + build_cow()
+    #return build_bubble(text) + build_cow()
+
+    return u'({})>:cow2:'.format(text)
 
 
 def build_cow():
-    return u"""
+    return u"""```
          \   ^__^
           \  (oo)\_______
              (__)\       )\/\\
                  ||----w |
                  ||     ||
-    """
+    ```"""
 
 
 def build_bubble(str, length=40):
